@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{8c6a177b-7223-45fd-908f-ddbadee62d4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor">
+      <UniqueIdentifier>{8a2e43a6-bf24-4996-b426-976024c6ae1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ThirdParty">
+      <UniqueIdentifier>{aa1df62a-91e7-4ccd-99b1-d01a4a4abd08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ThirdParty\glad">
+      <UniqueIdentifier>{586901ff-fee6-4286-afa3-0a27ddbfa3d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ThirdParty\glad\src">
+      <UniqueIdentifier>{a8150e81-a770-4b3f-9725-85e66a87a0da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\src">
+      <UniqueIdentifier>{5f81eadb-01f8-4196-9ea6-b7ebdb52290c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor\src">
+      <UniqueIdentifier>{791d772a-2346-4f56-bec4-8ea826fcba0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor\include">
+      <UniqueIdentifier>{5922e215-b942-4018-b6c6-382f7c6ad779}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\include">
+      <UniqueIdentifier>{be02e6b2-bb20-43be-af16-bc9998a2d55a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ThirdParty\imgui">
+      <UniqueIdentifier>{70fe1cdc-321e-4473-9aeb-a918ea3b981a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ThirdParty\glad\src\glad.c">
+      <Filter>ThirdParty\glad\src</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="ThirdParty\imgui\imgui.cpp">
+      <Filter>ThirdParty\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdParty\imgui\imgui_demo.cpp">
+      <Filter>ThirdParty\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdParty\imgui\imgui_draw.cpp">
+      <Filter>ThirdParty\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdParty\imgui\imgui_tables.cpp">
+      <Filter>ThirdParty\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdParty\imgui\imgui_widgets.cpp">
+      <Filter>ThirdParty\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\src\Log.cpp">
+      <Filter>Engine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\src\WindowManager.cpp">
+      <Filter>Engine\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.hpp" />
+    <ClInclude Include="Engine\include\Entity.hpp">
+      <Filter>Engine\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\include\Log.hpp">
+      <Filter>Engine\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\include\WindowManager.hpp">
+      <Filter>Engine\include</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
