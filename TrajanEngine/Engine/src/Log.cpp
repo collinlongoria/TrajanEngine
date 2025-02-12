@@ -1,6 +1,6 @@
-#include "stdafx.hpp"
-
 #include "Log.hpp"
+
+#include <print>
 
 Log& Log::Instance() {
 	static Log instance;
@@ -57,8 +57,9 @@ void Log::Output(const std::string& message, Severity severity) {
 	const std::string timestamp_str = GetTime();
 
 	// Final string
-	std::string padding(((severity_max - severity_str.size()) / 2), ' ');
-	std::string log_str = "[" + timestamp_str + "]""[" + padding + severity_str + padding + "] " + message;
+	std::string padding((severity_max - severity_str.size()) / 2, ' ');
+	std::string right_padding = padding + ((severity_str.size() + padding.size() * 2 < severity_max) ? " " : "");
+	std::string log_str = "[" + timestamp_str + "][" + padding + severity_str + right_padding + "] " + message;
 
 	// Debug only: print to console
 #ifdef _DEBUG

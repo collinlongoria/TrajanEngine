@@ -1,6 +1,8 @@
 #ifndef WINDOWMANAGER_HPP
 #define WINDOWMANAGER_HPP
 
+#include <string>
+
 struct GLFWwindow;
 
 class WindowManager {

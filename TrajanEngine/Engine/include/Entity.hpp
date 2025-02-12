@@ -1,6 +1,8 @@
 #ifndef ENTITY_HPP
 #define ENTITY_HPP
 
+#include <cstdint>
+
 // Entity ID
 using Entity = uint32_t;
 

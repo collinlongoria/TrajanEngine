@@ -1,6 +1,11 @@
 #ifndef LOG_HPP
 #define LOG_HPP
 
+#include <mutex>
+#include <fstream>
+#include <chrono>
+#include <string>
+
 // Severity levels
 enum class Severity {
 	GOOD,

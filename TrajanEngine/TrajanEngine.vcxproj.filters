@@ -60,7 +60,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.hpp" />
     <ClInclude Include="Engine\include\Entity.hpp">
       <Filter>Engine\include</Filter>
     </ClInclude>
@@ -68,6 +67,30 @@
       <Filter>Engine\include</Filter>
     </ClInclude>
     <ClInclude Include="Engine\include\WindowManager.hpp">
+      <Filter>Engine\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\include\Component.hpp">
+      <Filter>Engine\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\include\ComponentArray.hpp">
+      <Filter>Engine\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\include\ComponentManager.hpp">
+      <Filter>Engine\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\include\Coordinator.hpp">
+      <Filter>Engine\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\include\ECS.hpp">
+      <Filter>Engine\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\include\EntityManager.hpp">
+      <Filter>Engine\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\include\System.hpp">
+      <Filter>Engine\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\include\SystemManager.hpp">
       <Filter>Engine\include</Filter>
     </ClInclude>
   </ItemGroup>

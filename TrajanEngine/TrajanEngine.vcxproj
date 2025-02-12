@@ -132,7 +132,7 @@
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <TreatWarningAsError>true</TreatWarningAsError>
       <Optimization>MaxSpeed</Optimization>
-      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>stdafx.hpp</PrecompiledHeaderFile>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
     </ClCompile>
@@ -190,10 +190,17 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Engine\include\Component.hpp" />
+    <ClInclude Include="Engine\include\ComponentArray.hpp" />
+    <ClInclude Include="Engine\include\ComponentManager.hpp" />
+    <ClInclude Include="Engine\include\Coordinator.hpp" />
+    <ClInclude Include="Engine\include\ECS.hpp" />
     <ClInclude Include="Engine\include\Entity.hpp" />
+    <ClInclude Include="Engine\include\EntityManager.hpp" />
     <ClInclude Include="Engine\include\Log.hpp" />
+    <ClInclude Include="Engine\include\System.hpp" />
+    <ClInclude Include="Engine\include\SystemManager.hpp" />
     <ClInclude Include="Engine\include\WindowManager.hpp" />
-    <ClInclude Include="stdafx.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,4 +1,4 @@
-#include "stdafx.hpp"
+#include <chrono>
 
 #include "WindowManager.hpp"
 #include "Log.hpp"

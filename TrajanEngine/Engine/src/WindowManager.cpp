@@ -1,11 +1,9 @@
-#include "stdafx.hpp"
+#include "WindowManager.hpp"
 
 #include "glad.h"
 #include "glfw3.h"
 
 #include "Log.hpp"
-
-#include "WindowManager.hpp"
 
 void WindowManager::Init(std::string const& windowName, unsigned int windowWidth, unsigned int windowHeight, unsigned int windowPosX, unsigned int windowPosY) {
 	// Init GLFW
