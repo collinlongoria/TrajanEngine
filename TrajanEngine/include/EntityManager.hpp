@@ -5,11 +5,13 @@
 #include <array>
 #include <cstdint>
 
+#include "EngineAPI.hpp"
+
 #include "Entity.hpp"
 #include "Component.hpp"
 #include "Log.hpp"
 
-class EntityManager {
+class ENGINE_API EntityManager {
 public:
 	EntityManager() {
 		// Init the queue with all possible entity IDs

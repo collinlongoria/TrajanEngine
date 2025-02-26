@@ -4,6 +4,8 @@
 #include <array>
 #include <unordered_map>
 
+#include "EngineAPI.hpp"
+
 #include "Entity.hpp"
 #include "Log.hpp"
 
@@ -14,7 +16,7 @@ public:
 };
 
 template<typename T>
-class ComponentArray : public IComponentArray {
+class ENGINE_API ComponentArray : public IComponentArray {
 public:
 	void InsertData(Entity entity, T component) {
 		if (entityToIndexMap.find(entity) != entityToIndexMap.end()) {

@@ -3,9 +3,11 @@
 
 #include <set>
 
+#include "EngineAPI.hpp"
+
 #include "Entity.hpp"
 
-class System {
+class ENGINE_API System {
 public:
 	std::set<Entity> entities;
 };

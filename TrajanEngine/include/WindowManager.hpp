@@ -3,9 +3,11 @@
 
 #include <string>
 
+#include "EngineAPI.hpp"
+
 struct GLFWwindow;
 
-class WindowManager {
+class ENGINE_API WindowManager {
 public:
 	void Init(std::string const& windowName,
 		unsigned int windowWidth, unsigned int windowHeight,

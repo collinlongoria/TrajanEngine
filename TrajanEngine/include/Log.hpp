@@ -6,6 +6,8 @@
 #include <chrono>
 #include <string>
 
+#include "EngineAPI.hpp"
+
 // Severity levels
 enum class Severity {
 	GOOD,
@@ -15,7 +17,7 @@ enum class Severity {
 };
 constexpr int severity_max = 7; // Used to pad the log after the severity label; Change if needed.
 
-class Log {
+class ENGINE_API Log {
 public:
 	// Retrieve instance
 	static Log& Instance();
@@ -48,7 +50,7 @@ private:
 };
 
 // Helper function for quicker logging
-inline void Output(const std::string& message = "", Severity severity = Severity::MESSAGE) {
+inline ENGINE_API void Output(const std::string& message = "", Severity severity = Severity::MESSAGE) {
 	Log::Instance().Output(message, severity);
 }
 

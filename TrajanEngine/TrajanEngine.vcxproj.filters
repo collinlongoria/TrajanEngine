@@ -4,9 +4,6 @@
     <Filter Include="Engine">
       <UniqueIdentifier>{8c6a177b-7223-45fd-908f-ddbadee62d4a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Editor">
-      <UniqueIdentifier>{8a2e43a6-bf24-4996-b426-976024c6ae1b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ThirdParty">
       <UniqueIdentifier>{aa1df62a-91e7-4ccd-99b1-d01a4a4abd08}</UniqueIdentifier>
     </Filter>
@@ -18,12 +15,6 @@
     </Filter>
     <Filter Include="Engine\src">
       <UniqueIdentifier>{5f81eadb-01f8-4196-9ea6-b7ebdb52290c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Editor\src">
-      <UniqueIdentifier>{791d772a-2346-4f56-bec4-8ea826fcba0f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Editor\include">
-      <UniqueIdentifier>{5922e215-b942-4018-b6c6-382f7c6ad779}</UniqueIdentifier>
     </Filter>
     <Filter Include="Engine\include">
       <UniqueIdentifier>{be02e6b2-bb20-43be-af16-bc9998a2d55a}</UniqueIdentifier>
@@ -52,45 +43,54 @@
     <ClCompile Include="ThirdParty\imgui\imgui_widgets.cpp">
       <Filter>ThirdParty\imgui</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\src\Log.cpp">
+    <ClCompile Include="src\Log.cpp">
       <Filter>Engine\src</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\src\WindowManager.cpp">
+    <ClCompile Include="src\WindowManager.cpp">
+      <Filter>Engine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine.cpp">
+      <Filter>Engine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EngineAPI.cpp">
       <Filter>Engine\src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Engine\include\Entity.hpp">
+    <ClInclude Include="include\Component.hpp">
       <Filter>Engine\include</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\include\Log.hpp">
+    <ClInclude Include="include\ComponentArray.hpp">
       <Filter>Engine\include</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\include\WindowManager.hpp">
+    <ClInclude Include="include\ComponentManager.hpp">
       <Filter>Engine\include</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\include\Component.hpp">
+    <ClInclude Include="include\ECSCoordinator.hpp">
       <Filter>Engine\include</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\include\ComponentArray.hpp">
+    <ClInclude Include="include\EngineAPI.hpp">
       <Filter>Engine\include</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\include\ComponentManager.hpp">
+    <ClInclude Include="include\Entity.hpp">
       <Filter>Engine\include</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\include\Coordinator.hpp">
+    <ClInclude Include="include\EntityManager.hpp">
       <Filter>Engine\include</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\include\ECS.hpp">
+    <ClInclude Include="include\Log.hpp">
       <Filter>Engine\include</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\include\EntityManager.hpp">
+    <ClInclude Include="include\System.hpp">
       <Filter>Engine\include</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\include\System.hpp">
+    <ClInclude Include="include\SystemManager.hpp">
       <Filter>Engine\include</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\include\SystemManager.hpp">
+    <ClInclude Include="include\WindowManager.hpp">
+      <Filter>Engine\include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Engine.hpp">
       <Filter>Engine\include</Filter>
     </ClInclude>
   </ItemGroup>

@@ -4,12 +4,14 @@
 #include <memory>
 #include <unordered_map>
 
+#include "EngineAPI.hpp"
+
 #include "Log.hpp"
 #include "Component.hpp"
 #include "ComponentArray.hpp"
 #include "Entity.hpp"
 
-class ComponentManager {
+class ENGINE_API ComponentManager {
 public:
 	template<typename T>
 	void RegisterComponent() {

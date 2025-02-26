@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{e325be78-0d0b-4ba6-a7b3-555dbb061d51}</ProjectGuid>
-    <RootNamespace>TrajanEngine</RootNamespace>
+    <ProjectGuid>{9b45a334-7fea-4c10-8e16-e79a09a23d8e}</ProjectGuid>
+    <RootNamespace>TrajanEditor</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -40,7 +40,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -70,39 +70,36 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(SolutionDir)ThirdParty\GLFW\include;$(SolutionDir)ThirdParty\glad\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)\ThirdParty\GLFW;$(LibraryPath)</LibraryPath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>$(SolutionDir)ThirdParty\GLFW\include;$(SolutionDir)ThirdParty\glad\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)\ThirdParty\GLFW;$(LibraryPath)</LibraryPath>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)ThirdParty\GLFW\include\GLFW;$(ProjectDir)ThirdParty\glad\include;$(ProjectDir)ThirdParty\glm;$(ProjectDir)ThirdParty\imgui;$(ProjectDir)ThirdParty\imgui\backends;$(ProjectDir)include;$(ProjectDir);$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProjectDir)\ThirdParty\GLFW;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)build\output\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)build\intermediate\Engine\$(Platform)\$(Configuration)\</IntDir>
-    <SourcePath>$(ProjectDir)src;$(ProjectDir)ThirdParty\glad\src;$(ProjectDir)ThirdParty\imgui;$(SourcePath)</SourcePath>
+    <IntDir>$(SolutionDir)build\intermediate\Editor\$(Platform)\$(Configuration)\</IntDir>
+    <IncludePath>$(ProjectDir)include;$(SolutionDir)TrajanEngine\include;$(SolutionDir)TrajanEngine\ThirdParty\imgui;$(SolutionDir)TrajanEngine\ThirdParty\imgui\backends;$(SolutionDir)TrajanEngine\ThirdParty\stb;$(SolutionDir)TrajanEngine\ThirdParty\glm;$(IncludePath)</IncludePath>
+    <SourcePath>$(ProjectDir)src;$(SourcePath)</SourcePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(SolutionDir)ThirdParty\GLFW\include\GLFW;$(SolutionDir)ThirdParty\glad\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)\ThirdParty\GLFW;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)build\output\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)build\intermediate\Engine\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir>$(SolutionDir)build\intermediate\Editor\$(Platform)\$(Configuration)\</IntDir>
+    <IncludePath>$(ProjectDir)include;$(SolutionDir)TrajanEngine\include;$(SolutionDir)TrajanEngine\ThirdParty\imgui;$(SolutionDir)TrajanEngine\ThirdParty\imgui\backends;$(SolutionDir)TrajanEngine\ThirdParty\stb;$(SolutionDir)TrajanEngine\ThirdParty\glm;$(IncludePath)</IncludePath>
+    <SourcePath>$(ProjectDir)src;$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(ProjectDir)include;$(SolutionDir)TrajanEngine\include;$(SolutionDir)TrajanEngine\ThirdParty\imgui;$(SolutionDir)TrajanEngine\ThirdParty\imgui\backends;$(SolutionDir)TrajanEngine\ThirdParty\stb;$(SolutionDir)TrajanEngine\ThirdParty\glm;$(IncludePath)</IncludePath>
+    <SourcePath>$(ProjectDir)src;$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(ProjectDir)include;$(SolutionDir)TrajanEngine\include;$(SolutionDir)TrajanEngine\ThirdParty\imgui;$(SolutionDir)TrajanEngine\ThirdParty\imgui\backends;$(SolutionDir)TrajanEngine\ThirdParty\stb;$(SolutionDir)TrajanEngine\ThirdParty\glm;$(IncludePath)</IncludePath>
+    <SourcePath>$(ProjectDir)src;$(SourcePath)</SourcePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);ENGINE_EXPORTS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -111,38 +108,31 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);ENGINE_EXPORTS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);ENGINE_EXPORTS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <TreatWarningAsError>true</TreatWarningAsError>
-      <Optimization>MaxSpeed</Optimization>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PrecompiledHeaderFile>stdafx.hpp</PrecompiledHeaderFile>
-      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glfw3dll.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /y $(ProjectDir)ThirdParty\GLFW\glfw3.dll  $(OutDir)</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -151,59 +141,23 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);ENGINE_EXPORTS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glfw3dll.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /y $(ProjectDir)ThirdParty\GLFW\glfw3.dll  $(OutDir)</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="src\Engine.cpp" />
-    <ClCompile Include="src\EngineAPI.cpp" />
-    <ClCompile Include="src\Log.cpp" />
-    <ClCompile Include="src\WindowManager.cpp" />
-    <ClCompile Include="ThirdParty\glad\src\glad.c">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="ThirdParty\imgui\imgui.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="ThirdParty\imgui\imgui_demo.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="ThirdParty\imgui\imgui_draw.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="ThirdParty\imgui\imgui_tables.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="ThirdParty\imgui\imgui_widgets.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="include\Component.hpp" />
-    <ClInclude Include="include\ComponentArray.hpp" />
-    <ClInclude Include="include\ComponentManager.hpp" />
-    <ClInclude Include="include\ECSCoordinator.hpp" />
-    <ClInclude Include="include\Engine.hpp" />
-    <ClInclude Include="include\EngineAPI.hpp" />
-    <ClInclude Include="include\Entity.hpp" />
-    <ClInclude Include="include\EntityManager.hpp" />
-    <ClInclude Include="include\Log.hpp" />
-    <ClInclude Include="include\System.hpp" />
-    <ClInclude Include="include\SystemManager.hpp" />
-    <ClInclude Include="include\WindowManager.hpp" />
+    <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
