@@ -7,7 +7,7 @@
 
 #include "Entity.hpp"
 
-class ENGINE_API System {
+class System {
 public:
 	std::set<Entity> entities;
 };

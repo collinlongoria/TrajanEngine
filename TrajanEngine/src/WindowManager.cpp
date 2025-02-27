@@ -5,7 +5,7 @@
 
 #include "Log.hpp"
 
-void WindowManager::Init(std::string const& windowName, unsigned int windowWidth, unsigned int windowHeight, unsigned int windowPosX, unsigned int windowPosY) {
+GLFWwindow& WindowManager::Init(std::string const& windowName, unsigned int windowWidth, unsigned int windowHeight, unsigned int windowPosX, unsigned int windowPosY) {
 	// Init GLFW
 	Output("Initializing GLFW...");
 	if (!glfwInit()) {
@@ -49,6 +49,8 @@ void WindowManager::Init(std::string const& windowName, unsigned int windowWidth
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 	Output("Window initialized!", Severity::GOOD);
+
+	return *window;
 }
 
 void WindowManager::Update() {

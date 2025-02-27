@@ -11,7 +11,7 @@
 #include "Component.hpp"
 #include "Log.hpp"
 
-class ENGINE_API EntityManager {
+class EntityManager {
 public:
 	EntityManager() {
 		// Init the queue with all possible entity IDs
@@ -51,7 +51,23 @@ public:
 	}
 
 	void SetSignature(Entity entity, Signature signature) {
+		if (entity >= MAX_ENTITIES) {
+			Output("ID out of range.", Severity::ERROR);
+			return;
+		}
 
+		// put this entity's signature into the array
+		signatures[entity] = signature;
+	}
+
+	Signature GetSignature(Entity entity) {
+		if (entity >= MAX_ENTITIES) {
+			Output("ID out of range.", Severity::ERROR);
+			return -1; // error?
+		}
+
+		// Get entity's signature from the array
+		return signatures[entity];
 	}
 
 private:

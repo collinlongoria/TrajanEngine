@@ -1,45 +1,35 @@
 #include <chrono>
 #include <print>
-#include <Windows.h>
 
-typedef void (*EngineInitFunc)    ();
-typedef int  (*EngineUpdateFunc)  (float);
-typedef int  (*EngineShutdownFunc)();
+#include "Engine.hpp"
+#include "Window.hpp"
 
 int main(void) {
-	// Load Engine Module
-	HMODULE engineModule = LoadLibraryA("TrajanEngine.dll");
+	// Initialize Engine
+	Engine::Initialize();
 
-	if (!engineModule) return EXIT_FAILURE;
+	// Create window
+	auto window = Engine::CreateWindow("Trajan", 640, 480, 0, 0);
 
-	// Inject Engine Functions
-	EngineInitFunc EngineInit = (EngineInitFunc)GetProcAddress(engineModule, "EngineInit");
-	EngineUpdateFunc EngineUpdate = (EngineUpdateFunc)GetProcAddress(engineModule, "EngineUpdate");
-	EngineShutdownFunc EngineShutdown = (EngineShutdownFunc)GetProcAddress(engineModule, "EngineShutdown");
+	// Engine Loop
+	float dt = 0.0f;
+	while (!window->ShouldClose()) {
+		auto start = std::chrono::high_resolution_clock::now();
 
-	if (EngineInit && EngineUpdate && EngineShutdown) {
-		
-		EngineInit();
+		window->PollEvents();
 
-		// Engine Loop
-		float dt = 0.0f; int quitCode = 0;
-		while (quitCode != 1) {
-			auto start = std::chrono::high_resolution_clock::now();
+		Engine::Update(dt);
 
-			quitCode = EngineUpdate(dt);
+		window->SwapBuffers();
 
-			auto stop = std::chrono::high_resolution_clock::now();
+		auto stop = std::chrono::high_resolution_clock::now();
 
-			// Calculate delta
-			dt = std::chrono::duration<float, std::chrono::seconds::period>(stop - start).count();
-		}
-
-		EngineShutdown();
-	}
-	else {
-		return EXIT_FAILURE;
+		// Calculate delta
+		dt = std::chrono::duration<float, std::chrono::seconds::period>(stop - start).count();
 	}
 
-	FreeLibrary(engineModule);
+	// Shutdown Engine
+	Engine::Shutdown();
+
 	return EXIT_SUCCESS;
 }

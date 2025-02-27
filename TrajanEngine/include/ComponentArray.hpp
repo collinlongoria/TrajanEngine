@@ -16,7 +16,7 @@ public:
 };
 
 template<typename T>
-class ENGINE_API ComponentArray : public IComponentArray {
+class ComponentArray : public IComponentArray {
 public:
 	void InsertData(Entity entity, T component) {
 		if (entityToIndexMap.find(entity) != entityToIndexMap.end()) {
@@ -47,7 +47,7 @@ public:
 		// Update the map
 		Entity entityLast = indexToEntityMap[indexLast];
 		entityToIndexMap[entityLast] = indexRemoved;
-		indexToEntityMap[IndexRemoved] = entityLast;
+		indexToEntityMap[indexRemoved] = entityLast;
 
 		entityToIndexMap.erase(entity);
 		indexToEntityMap.erase(indexLast);

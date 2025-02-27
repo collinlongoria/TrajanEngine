@@ -167,11 +167,10 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="src\Engine.cpp" />
     <ClCompile Include="src\EngineAPI.cpp" />
     <ClCompile Include="src\Log.cpp" />
-    <ClCompile Include="src\WindowManager.cpp" />
+    <ClCompile Include="src\Window.cpp" />
     <ClCompile Include="ThirdParty\glad\src\glad.c">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
@@ -203,7 +202,7 @@
     <ClInclude Include="include\Log.hpp" />
     <ClInclude Include="include\System.hpp" />
     <ClInclude Include="include\SystemManager.hpp" />
-    <ClInclude Include="include\WindowManager.hpp" />
+    <ClInclude Include="include\Window.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

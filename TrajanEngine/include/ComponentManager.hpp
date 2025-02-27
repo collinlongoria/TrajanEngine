@@ -11,7 +11,7 @@
 #include "ComponentArray.hpp"
 #include "Entity.hpp"
 
-class ENGINE_API ComponentManager {
+class ComponentManager {
 public:
 	template<typename T>
 	void RegisterComponent() {

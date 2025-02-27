@@ -27,7 +27,6 @@
     <ClCompile Include="ThirdParty\glad\src\glad.c">
       <Filter>ThirdParty\glad\src</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="ThirdParty\imgui\imgui.cpp">
       <Filter>ThirdParty\imgui</Filter>
     </ClCompile>
@@ -46,13 +45,13 @@
     <ClCompile Include="src\Log.cpp">
       <Filter>Engine\src</Filter>
     </ClCompile>
-    <ClCompile Include="src\WindowManager.cpp">
-      <Filter>Engine\src</Filter>
-    </ClCompile>
     <ClCompile Include="src\Engine.cpp">
       <Filter>Engine\src</Filter>
     </ClCompile>
     <ClCompile Include="src\EngineAPI.cpp">
+      <Filter>Engine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Window.cpp">
       <Filter>Engine\src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -87,10 +86,10 @@
     <ClInclude Include="include\SystemManager.hpp">
       <Filter>Engine\include</Filter>
     </ClInclude>
-    <ClInclude Include="include\WindowManager.hpp">
+    <ClInclude Include="include\Engine.hpp">
       <Filter>Engine\include</Filter>
     </ClInclude>
-    <ClInclude Include="include\Engine.hpp">
+    <ClInclude Include="include\Window.hpp">
       <Filter>Engine\include</Filter>
     </ClInclude>
   </ItemGroup>

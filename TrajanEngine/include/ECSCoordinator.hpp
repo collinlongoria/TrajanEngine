@@ -8,7 +8,7 @@
 #include "EntityManager.hpp"
 #include "SystemManager.hpp"
 
-class ENGINE_API ECSCoordinator {
+class ECSCoordinator {
 public:
 	void Init() {
 		// Create all managers

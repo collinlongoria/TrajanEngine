@@ -11,7 +11,7 @@
 #include "System.hpp"
 #include "Log.hpp"
 
-class ENGINE_API SystemManager {
+class SystemManager {
 public:
 	template<typename T>
 	std::shared_ptr<T> RegisterSystem() {

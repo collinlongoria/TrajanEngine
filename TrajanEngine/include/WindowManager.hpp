@@ -7,9 +7,9 @@
 
 struct GLFWwindow;
 
-class ENGINE_API WindowManager {
+class WindowManager {
 public:
-	void Init(std::string const& windowName,
+	GLFWwindow& Init(std::string const& windowName,
 		unsigned int windowWidth, unsigned int windowHeight,
 		unsigned int windowPosX, unsigned int windowPosY);
 
@@ -23,7 +23,7 @@ public:
 	bool Quit() const { return toQuit; }
 
 private:
-	GLFWwindow* window;
+	GLFWwindow* window = nullptr;
 
 	bool toQuit = false;
 };
