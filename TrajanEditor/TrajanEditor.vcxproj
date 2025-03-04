@@ -75,14 +75,16 @@
     <IntDir>$(SolutionDir)build\intermediate\Editor\$(Platform)\$(Configuration)\</IntDir>
     <IncludePath>$(ProjectDir)include;$(SolutionDir)TrajanEngine\include;$(SolutionDir)TrajanEngine\ThirdParty\imgui;$(SolutionDir)TrajanEngine\ThirdParty\imgui\backends;$(SolutionDir)TrajanEngine\ThirdParty\stb;$(SolutionDir)TrajanEngine\ThirdParty\glm;$(SolutionDir)TrajanEngine\ThirdParty\glad\include;$(SolutionDir)TrajanEngine\ThirdParty\GLFW\include\GLFW;$(IncludePath)</IncludePath>
     <SourcePath>$(ProjectDir)src;$(SourcePath)</SourcePath>
-    <LibraryPath>$(SolutionDir)build\output\$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)build\output\$(Platform)\$(Configuration)\;$(SolutionDir)TrajanEngine\ThirdParty\GLFW;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>$(SolutionDir)TrajanEngine\ThirdParty\imgui;$(SolutionDir)TrajanEngine\ThirdParty\imgui\backends;$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)build\output\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)build\intermediate\Editor\$(Platform)\$(Configuration)\</IntDir>
     <IncludePath>$(ProjectDir)include;$(SolutionDir)TrajanEngine\include;$(SolutionDir)TrajanEngine\ThirdParty\imgui;$(SolutionDir)TrajanEngine\ThirdParty\imgui\backends;$(SolutionDir)TrajanEngine\ThirdParty\stb;$(SolutionDir)TrajanEngine\ThirdParty\glm;$(SolutionDir)TrajanEngine\ThirdParty\glad\include;$(SolutionDir)TrajanEngine\ThirdParty\GLFW\include\GLFW;$(IncludePath)</IncludePath>
     <SourcePath>$(ProjectDir)src;$(SourcePath)</SourcePath>
-    <LibraryPath>$(SolutionDir)build\output\$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)build\output\$(Platform)\$(Configuration)\;$(SolutionDir)TrajanEngine\ThirdParty\GLFW;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>$(SolutionDir)TrajanEngine\ThirdParty\imgui;$(SolutionDir)TrajanEngine\ThirdParty\imgui\backends;$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>$(ProjectDir)include;$(SolutionDir)TrajanEngine\include;$(SolutionDir)TrajanEngine\ThirdParty\imgui;$(SolutionDir)TrajanEngine\ThirdParty\imgui\backends;$(SolutionDir)TrajanEngine\ThirdParty\stb;$(SolutionDir)TrajanEngine\ThirdParty\glm;$(SolutionDir)TrajanEngine\ThirdParty\glad\include;$(SolutionDir)TrajanEngine\ThirdParty\GLFW\include\GLFW;$(IncludePath)</IncludePath>
@@ -135,7 +137,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>TrajanEngine.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>TrajanEngine.lib;glfw3dll.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>
@@ -157,7 +159,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>TrajanEngine.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>TrajanEngine.lib;glfw3dll.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>
@@ -165,7 +167,43 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\TrajanEngine\ThirdParty\imgui\backends\imgui_impl_glfw.cpp" />
+    <ClCompile Include="..\TrajanEngine\ThirdParty\imgui\backends\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="..\TrajanEngine\ThirdParty\imgui\imgui.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\TrajanEngine\ThirdParty\imgui\imgui_demo.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\TrajanEngine\ThirdParty\imgui\imgui_draw.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\TrajanEngine\ThirdParty\imgui\imgui_tables.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\TrajanEngine\ThirdParty\imgui\imgui_widgets.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\Editor.cpp" />
     <ClCompile Include="src\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Editor.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

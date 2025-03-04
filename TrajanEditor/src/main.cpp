@@ -2,6 +2,7 @@
 #include <print>
 
 #include "Engine.hpp"
+#include "Editor.hpp"
 #include "Window.hpp"
 
 int main(void) {
@@ -10,6 +11,9 @@ int main(void) {
 
 	// Create window
 	auto window = Engine::CreateWindow("Trajan", 640, 480, 0, 0);
+
+	// Initialize Editor
+	Editor::Initialize(*window.get());
 
 	// Engine Loop
 	float dt = 0.0f;
@@ -20,6 +24,8 @@ int main(void) {
 
 		Engine::Update(dt);
 
+		Editor::Update(dt);
+
 		window->SwapBuffers();
 
 		auto stop = std::chrono::high_resolution_clock::now();
@@ -27,6 +33,9 @@ int main(void) {
 		// Calculate delta
 		dt = std::chrono::duration<float, std::chrono::seconds::period>(stop - start).count();
 	}
+
+	// Shutdown Editor
+	Editor::Shutdown();
 
 	// Shutdown Engine
 	Engine::Shutdown();

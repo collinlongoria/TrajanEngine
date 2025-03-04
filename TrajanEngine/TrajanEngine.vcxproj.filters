@@ -19,28 +19,10 @@
     <Filter Include="Engine\include">
       <UniqueIdentifier>{be02e6b2-bb20-43be-af16-bc9998a2d55a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ThirdParty\imgui">
-      <UniqueIdentifier>{70fe1cdc-321e-4473-9aeb-a918ea3b981a}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ThirdParty\glad\src\glad.c">
       <Filter>ThirdParty\glad\src</Filter>
-    </ClCompile>
-    <ClCompile Include="ThirdParty\imgui\imgui.cpp">
-      <Filter>ThirdParty\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="ThirdParty\imgui\imgui_demo.cpp">
-      <Filter>ThirdParty\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="ThirdParty\imgui\imgui_draw.cpp">
-      <Filter>ThirdParty\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="ThirdParty\imgui\imgui_tables.cpp">
-      <Filter>ThirdParty\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="ThirdParty\imgui\imgui_widgets.cpp">
-      <Filter>ThirdParty\imgui</Filter>
     </ClCompile>
     <ClCompile Include="src\Log.cpp">
       <Filter>Engine\src</Filter>
