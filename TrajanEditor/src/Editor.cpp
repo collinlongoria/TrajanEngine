@@ -1,11 +1,11 @@
 #include "Editor.hpp"
 
-#include "Window.hpp"
-#include "Log.hpp"
-
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
+
+#include "Window.hpp"
+#include "Log.hpp"
 
 void Editor::Initialize(Window& window) {
 	// Define GLSL version
@@ -34,19 +34,43 @@ void Editor::Update(float dt) {
 	ImGui_ImplGlfw_NewFrame();
 	ImGui::NewFrame();
 
-	static bool show = false;
-
-	ImGui::Begin("Hello World!");
-
-	ImGui::Checkbox("Demo", &show);
-
-	ImGui::End();
+	RenderMenu();
+	if(showFPS) RenderFPSCounter();
 
 	// Rendering ImGui
 	ImGui::Render();
 	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
 }
+
+void Editor::RenderMenu() {
+	if (ImGui::BeginMainMenuBar()) {
+		if (ImGui::BeginMenu("Options")) {
+			// FPS
+			ImGui::MenuItem("Show FPS", nullptr, &showFPS);
+			ImGui::EndMenu();
+		}
+		ImGui::EndMainMenuBar();
+	}
+}
+void Editor::RenderFPSCounter() {
+	ImVec2 windowPos(0, ImGui::GetFrameHeight());
+	ImGui::SetNextWindowPos(windowPos);
+	ImGui::SetNextWindowBgAlpha(0.35f); //optional, may remove
+
+	// remove decorations
+	ImGuiWindowFlags window_flags = ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoInputs;
+	ImGui::Begin("FPS Counter", nullptr, window_flags);
+	ImGui::Text("FPS: %.1f", ImGui::GetIO().Framerate); // change with my calculated framerate
+	ImGui::End();
+}
+/*
+void RenderGameScreen(ImTextureID gameTexture, const ImVec2& gameTextureSize) {
+	ImGui::Begin("Game View");
+	ImGui::Image(gameTexture, gameTextureSize);
+	ImGui::End();
+}
+*/
 
 void Editor::Shutdown() {
 	// ImGui Cleanup

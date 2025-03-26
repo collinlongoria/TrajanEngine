@@ -184,6 +184,7 @@
     <ClInclude Include="include\EngineAPI.hpp" />
     <ClInclude Include="include\Entity.hpp" />
     <ClInclude Include="include\EntityManager.hpp" />
+    <ClInclude Include="include\EventBus.hpp" />
     <ClInclude Include="include\Log.hpp" />
     <ClInclude Include="include\System.hpp" />
     <ClInclude Include="include\SystemManager.hpp" />

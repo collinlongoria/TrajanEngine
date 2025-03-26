@@ -400,3 +400,4 @@ FodyWeavers.xsd
 *.sln.iml
 /TrajanEngine/build
 /TrajanEngine/.vs
+/TrajanEditor/Log.txt

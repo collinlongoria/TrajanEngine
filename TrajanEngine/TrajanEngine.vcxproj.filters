@@ -83,5 +83,8 @@
     <ClInclude Include="include\Window.hpp">
       <Filter>Engine\include</Filter>
     </ClInclude>
+    <ClInclude Include="include\EventBus.hpp">
+      <Filter>Engine\include</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
