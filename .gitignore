@@ -401,3 +401,4 @@ FodyWeavers.xsd
 /TrajanEngine/build
 /TrajanEngine/.vs
 /TrajanEditor/Log.txt
+imgui.ini
