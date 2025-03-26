@@ -19,6 +19,15 @@
     <Filter Include="Engine\include">
       <UniqueIdentifier>{be02e6b2-bb20-43be-af16-bc9998a2d55a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ECS">
+      <UniqueIdentifier>{648f83f0-8ac8-41cd-8554-b73f90ffcc85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ECS\Components">
+      <UniqueIdentifier>{5fd78e85-690d-465d-9243-b8a857c529b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ECS\Systems">
+      <UniqueIdentifier>{851282b7-ca7e-4638-a015-acd19916caab}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ThirdParty\glad\src\glad.c">

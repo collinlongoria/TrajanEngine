@@ -55,6 +55,7 @@ Window::Window(uint32_t width, uint32_t height, const std::string& name)
 }
 
 void Window::PollEvents() {
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // concurrently needs to go here, but I would prefer to move this.
 	glfwPollEvents();
 }
 

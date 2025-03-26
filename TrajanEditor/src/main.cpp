@@ -18,6 +18,7 @@ int main(void) {
 	// Engine Loop
 	float dt = 0.0f;
 	while (!window->ShouldClose()) {
+		
 		auto start = std::chrono::high_resolution_clock::now();
 
 		window->PollEvents();
